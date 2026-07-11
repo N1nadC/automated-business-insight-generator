@@ -3,14 +3,14 @@ import plotly.graph_objects as go
 
 def state_revenue_chart(df):
     """
-    Creates a vertical bar chart for revenue by state.
+    Creates a vertical bar chart for revenue by region.
 
     Parameters
     ----------
     df : pandas.DataFrame
         Columns:
-        - customer_state (str): Brazilian state abbreviation (e.g., 'SP', 'RJ')
-        - revenue (numeric): Total revenue for the state
+        - region (str): Region/state abbreviation
+        - revenue (numeric): Total revenue for the region
 
     Returns
     -------
@@ -21,7 +21,7 @@ def state_revenue_chart(df):
     fig = go.Figure()
 
     fig.add_trace(go.Bar(
-        x=df_sorted['customer_state'],
+        x=df_sorted['region'],
         y=df_sorted['revenue'],
         marker=dict(
             color='#29b09d',
@@ -35,12 +35,12 @@ def state_revenue_chart(df):
 
     fig.update_layout(
         title=dict(
-            text='Revenue by State',
+            text='Revenue by Region',
             font=dict(size=20, color='#1f1f1f'),
             x=0.5
         ),
         xaxis=dict(
-            title='State',
+            title='Region',
             showgrid=False,
             tickfont=dict(size=12)
         ),

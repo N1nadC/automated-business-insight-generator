@@ -9,7 +9,7 @@ def top_products_chart(df, top_n=10):
     ----------
     df : pandas.DataFrame
         Columns:
-        - product_id (str): Product identifier
+        - product (str): Product identifier
         - revenue (numeric): Revenue for the product
     top_n : int, default 10
         Number of top products to display
@@ -23,7 +23,7 @@ def top_products_chart(df, top_n=10):
     fig = go.Figure()
 
     fig.add_trace(go.Bar(
-        y=df_top['product_id'],
+        y=df_top['product'],
         x=df_top['revenue'],
         orientation='h',
         marker=dict(

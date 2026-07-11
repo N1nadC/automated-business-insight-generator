@@ -9,7 +9,7 @@ def category_performance_chart(df):
     ----------
     df : pandas.DataFrame
         Columns:
-        - product_category_name_english (str): Product category name
+        - category (str): Product category name
         - revenue (numeric): Revenue for the category
 
     Returns
@@ -21,7 +21,7 @@ def category_performance_chart(df):
     fig = go.Figure()
 
     fig.add_trace(go.Bar(
-        y=df_sorted['product_category_name_english'],
+        y=df_sorted['category'],
         x=df_sorted['revenue'],
         orientation='h',
         marker=dict(

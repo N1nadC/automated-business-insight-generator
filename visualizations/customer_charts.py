@@ -3,14 +3,14 @@ import plotly.graph_objects as go
 
 def customer_distribution_chart(df, metric='customers'):
     """
-    Creates a donut chart for customer distribution by state.
+    Creates a donut chart for customer distribution by region.
 
     Parameters
     ----------
     df : pandas.DataFrame
         Columns:
-        - customer_state (str): Brazilian state abbreviation
-        - customers (int): Number of customers in the state
+        - region (str): Region/state abbreviation
+        - customers (int): Number of customers in the region
     metric : str, default 'customers'
         Label for the metric being displayed
 
@@ -24,7 +24,7 @@ def customer_distribution_chart(df, metric='customers'):
     fig = go.Figure()
 
     fig.add_trace(go.Pie(
-        labels=df['customer_state'],
+        labels=df['region'],
         values=df['customers'],
         hole=0.4,
         marker=dict(
